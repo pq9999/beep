@@ -105,7 +105,7 @@ function draw() {
   // 1. read the finger. 2. map it onto a pitch. 3. use it.
   let sounding = unlocked && mouseIsPressed;
   if (sounding) {
-    pitch = map(rotationZ, 0, rotationY, lowest, highest, true);
+    pitch = map(rotationZ, 0, rotationX, lowest, highest, true);
     osc.freq(pitch, 0.05);
   }
 
