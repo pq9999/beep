@@ -17,12 +17,14 @@ let waveType = 'triangle'; // 'sine', 'triangle', 'sawtooth' or 'square'
 let lowest = 110;      // hertz at the left edge
 let highest = 880;     // hertz at the right edge. three octaves up
 let volume = 0.4;      // from 0 to 1
-let fadeTime = 0.3;    // seconds to fade in and out. 0 clicks
+let fadeTime = 0;    // seconds to fade in and out. 0 clicks
 
 
 let osc;               // the oscillator
 let started = false;
 let pitch = 220;       // hertz
+
+
 
 let orientationX = 0;  // Current rotation around X axis (front/back tilt)
 let orientationY = 0;  // Current rotation around Y axis (left/right tilt)
@@ -42,6 +44,8 @@ function setup() {
     showDesktopQr();
   }
 
+  
+
   enableSoundTap('Tap to turn on sound');
       enableGyroTap('Tap screen to enable motion sensors');
 
@@ -49,6 +53,18 @@ function setup() {
   osc = new p5.Oscillator(pitch, waveType);
   osc.amp(0);
 }
+
+async function setup() {
+  
+  sound = await loadSound('https://www.wikiloops.com/embed/126876/126876.mp3');
+ 
+  amp = new p5.Amplitude();
+  delay = new p5.Delay();
+  sound.disconnect();
+  sound.connect(delay);
+  delay.connect(amp);
+
+  }
 
 function draw() {
   background(20);
