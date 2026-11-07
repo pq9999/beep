@@ -184,7 +184,4 @@ function windowResized() {
 
 
 
-function playSound(url) {
-    var a = new Audio('https://www.wikiloops.com/embed/126876');
-    a.play();
-}
+
