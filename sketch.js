@@ -13,7 +13,7 @@ function userSetupComplete() {
 
 
 // the feel of the piece. change these before you change anything else.
-let waveType = 'sine'; // 'sine', 'triangle', 'sawtooth' or 'square'
+let waveType = 'triangle'; // 'sine', 'triangle', 'sawtooth' or 'square'
 let lowest = 110;      // hertz at the left edge
 let highest = 880;     // hertz at the right edge. three octaves up
 let volume = 0.4;      // from 0 to 1
