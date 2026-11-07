@@ -168,7 +168,6 @@ function waveShape(phase) {
 function mousePressed() {
   if (unlocked) {
     osc.amp(volume, fadeTime); // fade in
-    sound.play();
   }
   return false;
 }
