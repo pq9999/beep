@@ -10,7 +10,7 @@ function userSetupComplete() {
   unlocked = true;
 }
 
-let sound, amp, delay, cnv;
+
 
 
 // the feel of the piece. change these before you change anything else.
@@ -55,15 +55,8 @@ function setup() {
   osc.amp(0);
 }
 
-async function setup() {
-  
-  sound = await loadSound('https://www.wikiloops.com/embed/126876/126876.mp3');
-   amp = new p5.Amplitude();
-  delay = new p5.Delay();
-  sound.disconnect();
-  sound.connect(delay);
-  delay.connect(amp);
-  }
+
+// https://www.wikiloops.com/embed/126876/126876.mp3
 
 function draw() {
   background(20);
@@ -187,4 +180,11 @@ function mouseReleased() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+}
+
+
+
+function playSound(url) {
+    var a = new Audio('https://www.wikiloops.com/embed/126876');
+    a.play();
 }
