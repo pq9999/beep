@@ -144,7 +144,7 @@ function draw() {
 
 // the height of the wave at a point in its cycle, from -1 to 1. only for the drawing.
 function waveShape(phase) {
-  if (waveType === 'square') {
+  if (waveType === 'triangle') {
     if (phase < 0.5) {
       return 1;
     }
