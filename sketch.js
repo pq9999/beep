@@ -10,6 +10,7 @@ function userSetupComplete() {
   unlocked = true;
 }
 
+let sound, amp, delay, cnv;
 
 
 // the feel of the piece. change these before you change anything else.
@@ -57,13 +58,11 @@ function setup() {
 async function setup() {
   
   sound = await loadSound('https://www.wikiloops.com/embed/126876/126876.mp3');
- 
-  amp = new p5.Amplitude();
+   amp = new p5.Amplitude();
   delay = new p5.Delay();
   sound.disconnect();
   sound.connect(delay);
   delay.connect(amp);
-
   }
 
 function draw() {
@@ -160,7 +159,7 @@ function draw() {
 
 // the height of the wave at a point in its cycle, from -1 to 1. only for the drawing.
 function waveShape(phase) {
-  if (waveType === 'triangle') {
+  if (waveType === 'square') {
     if (phase < 0.5) {
       return 1;
     }
@@ -176,6 +175,7 @@ function waveShape(phase) {
 function mousePressed() {
   if (unlocked) {
     osc.amp(volume, fadeTime); // fade in
+    sound.play();
   }
   return false;
 }
