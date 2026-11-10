@@ -25,11 +25,7 @@ let osc;               // the oscillator
 let started = false;
 let pitch = 220;       // hertz
 
-import { Soundfont } from "smplr";
 
-const context = new AudioContext();
-const marimba = Soundfont(context, { instrument: "marimba" });
-marimba.start({ note: 60, velocity: 80 });
 
 
 
