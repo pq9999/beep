@@ -25,6 +25,12 @@ let osc;               // the oscillator
 let started = false;
 let pitch = 220;       // hertz
 
+import { Soundfont } from "smplr";
+
+const context = new AudioContext();
+const marimba = Soundfont(context, { instrument: "marimba" });
+marimba.start({ note: 60, velocity: 80 });
+
 
 
 let orientationX = 0;  // Current rotation around X axis (front/back tilt)
