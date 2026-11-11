@@ -26,9 +26,6 @@ let started = false;
 let pitch = 220;       // hertz
 
 
-
-
-
 let orientationX = 0;  // Current rotation around X axis (front/back tilt)
 let orientationY = 0;  // Current rotation around Y axis (left/right tilt)
 let orientationZ = 0;  // Current rotation around Z axis (device rotation)

@@ -26,14 +26,6 @@
   <!-- p5-phone: the sound tap and gesture lock -->
   <script src="https://cdn.jsdelivr.net/npm/p5-phone@1.15.0/dist/p5-phone.min.js"></script>
     <script type="module">
-    import { SplendidGrandPiano } from "https://unpkg.com/smplr/dist/index.mjs"; // needs to be a url
-    const context = new AudioContext(); // create the audio context
-    const piano = SplendidGrandPiano(context); // create and load the instrument
-
-    document.getElementById("btn").onclick = () => {
-      context.resume(); // enable audio context after a user interaction
-      piano.start({ note: 60, velocity: 80 }); // play the note
-    };
   </script>
 </head>
 <body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotational Velocity - Mobile p5.js</title>
+    
+    <!-- Basic CSS to remove browser defaults and align canvas -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+    
+    <!-- Load p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.2.3/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.js-compatibility@0.2.0/src/preload.js"></script>
+    
+    <!-- Load the mobile p5.js permissions library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5-phone@1.15.2/dist/p5-phone.js"></script>
+    
+</head>
+<body>
+    <!-- Load the p5.js sketch -->
+    <script src="sketch.js"></script>
+    <button id="btn">play</button>
+      <script type="module">
+    import { SplendidGrandPiano } from "https://unpkg.com/smplr/dist/index.mjs"; // needs to be a url
+    const context = new AudioContext(); // create the audio context
+    const piano = SplendidGrandPiano(context); // create and load the instrument
+
+    document.getElementById("btn").onclick = () => {
+      context.resume(); // enable audio context after a user interaction
+      piano.start({ note: orientationX, velocity: 80 }); // play the note
+    };
+  </script>
+</body>
+</html>
