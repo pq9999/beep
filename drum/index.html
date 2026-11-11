@@ -49,8 +49,10 @@
       context.resume(); // enable audio context after a user interaction
       drums.start({ note: "kick"}); // play the note
       if (orientationX > 0) {
+        const context = new AudioContext(); // create the audio context
         drums.start({ note: "snare" });
       } else if (orientationX < 1) {
+        const context = new AudioContext(); // create the audio context
         drums.start({ note: "hihat" });
       }
     };
