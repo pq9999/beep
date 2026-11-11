@@ -40,6 +40,13 @@ function setup()
     // Set text properties
     textAlign(CENTER, CENTER);
     textSize(32);
+
+     // on a laptop, show a QR code of this page so you can open it on your phone
+  if (location.protocol === 'https:' && window.self === window.top) {
+    showDesktopQr();
+  }
+
+  
 }
 
 // ==============================================
