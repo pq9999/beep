@@ -33,6 +33,8 @@ function setup()
     
     // Lock mobile gestures to prevent scrolling, zooming, etc.
     lockGestures();
+
+    enableSoundTap('Tap to turn on sound');
     
     // Enable motion sensors with tap-to-start
     enableGyroTap('Tap screen to enable motion sensors');
