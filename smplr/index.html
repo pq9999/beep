@@ -29,11 +29,11 @@
       <script type="module">
     import { SplendidGrandPiano } from "https://unpkg.com/smplr/dist/index.mjs"; // needs to be a url
     const context = new AudioContext(); // create the audio context
-    const piano = SplendidGrandPiano(context); // create and load the instrument
+    const piano = SplendidGrandPiano(context, { decayTime: 0.5 }); // create and load the instrument
 
     document.getElementById("btn").onclick = () => {
       context.resume(); // enable audio context after a user interaction
-      piano.start({ note: orientationX*70, velocity: 10 }); // play the note
+      piano.start({ note: orientationX*70, velocity: 80 }); // play the note
     };
   </script>
 </body>
