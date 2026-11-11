@@ -47,7 +47,12 @@
 
     document.getElementById("btn").onclick = () => {
       context.resume(); // enable audio context after a user interaction
-      drums.start({ note: orientationX,}); // play the note
+      drums.start({ note: "kick"}); // play the note
+      if (orientationX > 0) {
+        drums.start({ note: "snare" });
+      } else if (orientationX < 1) {
+        drums.start({ note: "hihat" });
+      }
     };
   </script>
 </body>
