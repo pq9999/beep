@@ -51,6 +51,9 @@
       if (orientationX > 1) {
         const context = new AudioContext(); // create the audio context
         drums.start({ note: "snare" });
+      } else if (orientationX < -1) {
+        const context = new AudioContext(); // create the audio context
+        drums.start({ note: "hat" });
       }
     };
   </script>
