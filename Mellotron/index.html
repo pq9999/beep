@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mellotron</title>
+    
+    <!-- Basic CSS to remove browser defaults and align canvas -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+        }
+        .button1 {font-size: 100px;}
+    </style>
+    
+    <!-- Load p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.2.3/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.js-compatibility@0.2.0/src/preload.js"></script>
+    
+    <!-- Load the mobile p5.js permissions library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5-phone@1.15.2/dist/p5-phone.js"></script>
+    
+</head>
+<body>
+    <!-- Load the p5.js sketch -->
+    <script src="sketch.js"></script>
+    <button class = "button button1" id="btn">play</button>
+      <script type="module">
+    import { Mellotron, getMellotronNames } from "https://unpkg.com/smplr/dist/index.mjs"; // needs to be a url
+    const context = new AudioContext(); // create the audio context
+    const instruments = getMellotronNames();
+
+const mellotron = Mellotron(new AudioContext(), {
+  instrument: instruments[0],
+});
+
+
+    document.getElementById("btn").onclick = () => {
+      context.resume(); // enable audio context after a user interaction
+      mellotron.start({ note: "kick"}); // play the note
+      if (orientationX > 1) {
+        const context = new AudioContext(); // create the audio context
+        mellotron.start({ note: "snare" });
+      }
+    };
+  </script>
+</body>
+</html>
