@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiltafone Piano</title>
+    <title>Rotational Velocity - Mobile p5.js</title>
     
     <!-- Basic CSS to remove browser defaults and align canvas -->
     <style>
@@ -46,7 +46,7 @@
 
     document.getElementById("btn").onclick = () => {
       context.resume(); // enable audio context after a user interaction
-      piano.start({ note: orientationX*70, velocity: orientationZ, duration: 0.5 }); // play the note
+      piano.start({ note: orientationX*70, velocity: 80, duration: 0.5 }); // play the note
     };
   </script>
 </body>
