@@ -48,10 +48,10 @@
     document.getElementById("btn").onclick = () => {
       context.resume(); // enable audio context after a user interaction
       drums.start({ note: "kick"}); // play the note
-      if (totalVelocity > 0.1) {
+      if (velocityX + velocityY + velocityZ > 0.1) {
         const context = new AudioContext(); // create the audio context
         drums.start({ note: "snare" });
-      } else if (totalVelocity < -0.1) {
+      } else if (velocityX + velocityY + velocityZ < -0.1) {
         const context = new AudioContext(); // create the audio context
         drums.start({ note: "hat" });
       }
